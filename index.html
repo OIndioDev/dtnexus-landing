@@ -339,12 +339,12 @@ document.getElementById('y').textContent = new Date().getFullYear();
     c.width = W * dpr; c.height = H * dpr;
     c.style.width = W + 'px'; c.style.height = H + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    D = W < 600 ? 105 : 135;
-    var n = Math.round(Math.min(70, Math.max(26, (W * H) / 24000)));
+    D = W < 600 ? 120 : 150;
+    var n = Math.round(Math.min(110, Math.max(40, (W * H) / 15000)));
     pts = [];
     for (var i = 0; i < n; i++) {
       pts.push({ x: Math.random() * W, y: Math.random() * H,
-                 vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28 });
+                 vx: (Math.random() - 0.5) * 0.42, vy: (Math.random() - 0.5) * 0.42 });
     }
   }
 
@@ -359,8 +359,8 @@ document.getElementById('y').textContent = new Date().getFullYear();
         if (a.y < 0 || a.y > H) a.vy *= -1;
       }
       ctx.beginPath();
-      ctx.arc(a.x, a.y, 1.5, 0, 6.2832);
-      ctx.fillStyle = 'rgba(201,162,75,.55)';
+      ctx.arc(a.x, a.y, 1.8, 0, 6.2832);
+      ctx.fillStyle = 'rgba(230,201,127,.85)';
       ctx.fill();
       for (j = i + 1; j < pts.length; j++) {
         b = pts[j]; dx = a.x - b.x; dy = a.y - b.y;
@@ -368,7 +368,7 @@ document.getElementById('y').textContent = new Date().getFullYear();
         if (d < D) {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = 'rgba(201,162,75,' + ((1 - d / D) * 0.2).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(201,162,75,' + ((1 - d / D) * 0.36).toFixed(3) + ')';
           ctx.lineWidth = 1;
           ctx.stroke();
         }
