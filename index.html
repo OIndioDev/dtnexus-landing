@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://www.dtnexusdev.com.br/">
 <style>
   :root{
-    --bg:#0e1013; --bg2:#12151a; --panel:#171b21; --panel2:#1c2128; --line:#262c35;
+    --bg:#0e1013; --bg2:#12151a; --bg2t:rgba(18,21,26,.80); --panel:#171b21; --panel2:#1c2128; --line:#262c35;
     --text:#eceff3; --muted:#9aa4b0; --gold:#c9a24b; --gold2:#e6c97f; --gold-ink:#1b1405;
     --ok:#6fcf97;
   }
@@ -22,6 +22,11 @@
   a{color:inherit}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
   .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+
+  /* fundo tecnológico */
+  #bg{position:fixed;top:0;left:0;z-index:-1;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+      background-size:56px 56px}
 
   /* header */
   header{position:sticky;top:0;z-index:20;background:rgba(14,16,19,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -72,7 +77,7 @@
   @media(max-width:520px){.cols{grid-template-columns:1fr 1fr}.col:nth-child(3){display:none}}
 
   /* strip */
-  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2t)}
   .strip .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 24px;padding-top:18px;padding-bottom:18px}
   .strip div{color:var(--muted);font-size:14.5px;display:flex;align-items:center;gap:10px}
   .strip div::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}
@@ -137,6 +142,7 @@
 </style>
 </head>
 <body>
+<canvas id="bg" aria-hidden="true"></canvas>
 
 <header>
   <div class="wrap">
@@ -219,7 +225,7 @@
     </div>
   </section>
 
-  <section id="balcao" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <section id="balcao" style="background:var(--bg2t);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div class="wrap split">
       <div>
         <p class="eyebrow">Balcão e oficina</p>
@@ -278,7 +284,7 @@
     </div>
   </section>
 
-  <section id="faq" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <section id="faq" style="background:var(--bg2t);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div class="wrap">
       <div style="text-align:center">
         <p class="eyebrow">Perguntas</p>
@@ -315,6 +321,73 @@
   </div>
 </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+/* Fundo tecnológico: rede de pontos dourados. Leve, pausa em aba oculta e respeita "reduzir movimento". */
+(function () {
+  var c = document.getElementById('bg');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W = 0, H = 0, pts = [], D = 130, raf = 0, lastW = 0;
+
+  function init() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight + 120;
+    c.width = W * dpr; c.height = H * dpr;
+    c.style.width = W + 'px'; c.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    D = W < 600 ? 105 : 135;
+    var n = Math.round(Math.min(70, Math.max(26, (W * H) / 24000)));
+    pts = [];
+    for (var i = 0; i < n; i++) {
+      pts.push({ x: Math.random() * W, y: Math.random() * H,
+                 vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28 });
+    }
+  }
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    var i, j, a, b, dx, dy, d;
+    for (i = 0; i < pts.length; i++) {
+      a = pts[i];
+      if (!reduce) {
+        a.x += a.vx; a.y += a.vy;
+        if (a.x < 0 || a.x > W) a.vx *= -1;
+        if (a.y < 0 || a.y > H) a.vy *= -1;
+      }
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, 1.5, 0, 6.2832);
+      ctx.fillStyle = 'rgba(201,162,75,.55)';
+      ctx.fill();
+      for (j = i + 1; j < pts.length; j++) {
+        b = pts[j]; dx = a.x - b.x; dy = a.y - b.y;
+        d = Math.sqrt(dx * dx + dy * dy);
+        if (d < D) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = 'rgba(201,162,75,' + ((1 - d / D) * 0.2).toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+    if (!reduce) raf = requestAnimationFrame(frame);
+  }
+
+  function start() { cancelAnimationFrame(raf); lastW = window.innerWidth; init(); frame(); }
+
+  start();
+  window.addEventListener('resize', function () {
+    if (window.innerWidth !== lastW) start();   /* ignora só a barra do navegador subindo/descendo */
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (reduce) return;
+    if (document.hidden) cancelAnimationFrame(raf); else { cancelAnimationFrame(raf); frame(); }
+  });
+})();
+</script>
 </body>
 </html>
