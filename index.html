@@ -136,6 +136,10 @@
   /* pricing */
   .plans{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));max-width:860px;margin:0 auto}
   .plan{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px;position:relative}
+  .plan{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015)),var(--panel);border-color:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 40px -24px rgba(0,0,0,.9);transition:transform .25s,box-shadow .25s}
+  .plan:hover{transform:translateY(-4px)}
+  .plan.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(201,162,75,.25),0 24px 60px -24px rgba(201,162,75,.45)}
+  #planos{background:radial-gradient(60% 50% at 50% 0%,rgba(201,162,75,.10),transparent 70%)}
   .plan.hl{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,162,75,.09),var(--panel) 45%)}
   .badge{position:absolute;top:-12px;left:28px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--gold-ink);font-weight:800;font-size:12px;letter-spacing:.4px;padding:4px 12px;border-radius:99px}
   .plan h3{margin:0;font-size:18px;color:var(--muted);font-weight:600}
