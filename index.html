@@ -139,6 +139,24 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center}
   footer a{text-decoration:none}
   footer a:hover{color:var(--text)}
+
+  /* Galeria do sistema */
+  .gal-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 14px;margin:0 -2px 8px;scrollbar-width:thin}
+  .gal-tabs button{flex:0 0 auto;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s,background .15s}
+  .gal-tabs button:hover{color:var(--text);border-color:var(--gold)}
+  .gal-tabs button[aria-selected="true"]{color:var(--gold-ink);background:linear-gradient(135deg,var(--gold2),var(--gold));border-color:transparent;font-weight:700}
+  .gal-frame{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .gal-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel2)}
+  .gal-bar i{width:10px;height:10px;border-radius:50%;background:#3a414b;display:block}
+  .gal-bar span{margin-left:10px;font-size:12px;color:var(--muted);letter-spacing:.3px}
+  .gal-shot{display:block;width:100%;padding:0;border:0;background:#0b0d10;cursor:zoom-in;line-height:0}
+  .gal-shot img{width:100%;height:auto;display:block}
+  .gal-cap{margin:18px 2px 0;max-width:70ch}
+  .gal-cap h3{margin:0 0 4px;font-size:19px}
+  .gal-cap p{margin:0;color:var(--muted);font-size:15.5px}
+  .gal-lb{position:fixed;inset:0;z-index:50;background:rgba(5,6,8,.92);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+  .gal-lb.on{display:flex}
+  .gal-lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 </style>
 </head>
 <body>
@@ -153,6 +171,7 @@
     <nav>
       <a href="#recursos">Recursos</a>
       <a href="#balcao">Balcão e oficina</a>
+      <a href="#sistema">O sistema</a>
       <a href="#planos">Planos</a>
       <a href="#faq">Perguntas</a>
     </nav>
@@ -244,6 +263,20 @@
         <div class="msg a"><small>Recepção</small>Perfeito, aviso o cliente agora.</div>
         <p class="mock-note" style="margin:6px 0 0">Exemplo ilustrativo do chat interno</p>
       </div>
+    </div>
+  </section>
+
+  <section id="sistema">
+    <div class="wrap">
+      <p class="eyebrow">O sistema por dentro</p>
+      <h2 class="serif">Veja como é no dia a dia da oficina</h2>
+      <p class="sub">Telas reais do DT Nexus CRM, com dados de demonstração. Toque para ampliar.</p>
+      <div class="gal-tabs" role="tablist" aria-label="Telas do sistema" id="galTabs"></div>
+      <div class="gal-frame">
+        <div class="gal-bar"><i></i><i></i><i></i><span>DT Nexus CRM</span></div>
+        <button class="gal-shot" id="galShot" type="button" aria-label="Ampliar imagem"><img id="galImg" alt="" width="1366" height="610" loading="lazy" decoding="async"></button>
+      </div>
+      <div class="gal-cap" aria-live="polite"><h3 id="galTitle"></h3><p id="galText"></p></div>
     </div>
   </section>
 
@@ -388,6 +421,42 @@ document.getElementById('y').textContent = new Date().getFullYear();
     if (reduce) return;
     if (document.hidden) cancelAnimationFrame(raf); else { cancelAnimationFrame(raf); frame(); }
   });
+})();
+</script>
+<div class="gal-lb" id="galLb" role="dialog" aria-label="Imagem ampliada"><img id="galLbImg" alt=""></div>
+<script>
+(function(){
+  var items=[
+    {k:"patio",t:"Gestão de pátio",d:"Todos os carros em um quadro Kanban: recepção, aguardando peças, na oficina, teste de rodagem, pronto e entregue. O que está atrasado aparece em destaque.",a:"Quadro Kanban da gestão de pátio, com os carros por etapa do serviço"},
+    {k:"lista",t:"Lista do pátio",d:"A mesma operação em formato de lista, com placa, cliente, tempo na etapa e o mecânico responsável. Dá para mudar a etapa direto na linha.",a:"Lista do pátio com placa, cliente, etapa e responsável"},
+    {k:"entrada",t:"Entrada de veículo",d:"Cliente e carro cadastrados de uma vez: telefone, placa, chassi, quilometragem, serviço de interesse e idioma dos avisos.",a:"Formulário de cadastro de cliente e veículo"},
+    {k:"equipe",n:"Equipe",t:"Equipe e mecânico responsável",d:"Veja qual mecânico está com cada carro e escolha como a oficina trabalha: carro com responsável ou equipe aberta.",a:"Tela de equipe com os carros e o mecânico responsável por cada um"},
+    {k:"chat",t:"Chat interno",d:"Balcão e oficina conversam dentro do sistema, sem recado em papel e sem grito pelo pátio.",a:"Chat interno entre balcão e mecânico"},
+    {k:"os",t:"Ordem de serviço",d:"Execução, peças e serviços, checklist, histórico e faturamento na mesma O.S. Gere o PDF ou mande o orçamento pelo WhatsApp.",a:"Painel da ordem de serviço com abas de execução, peças, checklist, histórico e faturamento"},
+    {k:"planilha",t:"Planilha operacional",d:"Atualize vários carros de uma vez, em formato de planilha: cliente, placa, km, status e valores.",a:"Planilha operacional para editar várias entradas do pátio"},
+    {k:"escuro",t:"Modo escuro",d:"Claro ou escuro, como ficar melhor para a recepção ou para a oficina.",a:"Gestão de pátio no modo escuro"},
+    {k:"login",t:"Acesso ao painel",d:"Entrada segura, com código de confirmação por e-mail, em português, inglês ou espanhol.",a:"Tela de login do DT Nexus CRM"}
+  ];
+  var tabs=document.getElementById('galTabs'),img=document.getElementById('galImg'),
+      tt=document.getElementById('galTitle'),tx=document.getElementById('galText'),
+      lb=document.getElementById('galLb'),lbi=document.getElementById('galLbImg'),
+      shot=document.getElementById('galShot'),btns=[],cur=0;
+  function show(i){
+    cur=i;var it=items[i];
+    img.src='assets/prints/'+it.k+'.webp';img.alt=it.a;
+    tt.textContent=it.t;tx.textContent=it.d;
+    btns.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});
+  }
+  items.forEach(function(it,i){
+    var b=document.createElement('button');
+    b.type='button';b.setAttribute('role','tab');b.textContent=it.n||it.t;
+    b.addEventListener('click',function(){show(i)});
+    tabs.appendChild(b);btns.push(b);
+  });
+  shot.addEventListener('click',function(){lbi.src=img.src;lbi.alt=img.alt;lb.classList.add('on')});
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+  show(0);
 })();
 </script>
 </body>
