@@ -172,30 +172,11 @@
   footer a:hover{color:var(--text)}
 
   /* Galeria do sistema */
-  .gal-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 14px;margin:0 -2px 8px;scrollbar-width:thin}
-  .gal-tabs button{flex:0 0 auto;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s,background .15s}
-  .gal-tabs button:hover{color:var(--text);border-color:var(--gold)}
-  .gal-tabs button[aria-selected="true"]{color:var(--gold-ink);background:linear-gradient(135deg,var(--gold2),var(--gold));border-color:transparent;font-weight:700}
   .gal-frame{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
   .gal-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel2)}
   .gal-bar i{width:10px;height:10px;border-radius:50%;background:#3a414b;display:block}
   .gal-bar span{margin-left:10px;font-size:12px;color:var(--muted);letter-spacing:.3px}
-  .gal-shot{display:block;width:100%;padding:0;border:0;background:#0b0d10;cursor:zoom-in;line-height:0}
-  .gal-shot img{width:100%;height:auto;display:block}
-  .gal-shot img{transition:opacity .35s ease}
-  .gal-shot img.fade{opacity:0}
-  .gal-prog{height:3px;background:var(--line);overflow:hidden}
-  .gal-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold2),var(--gold))}
-  .gal-prog i.run{animation:galrun var(--gal-ms,6000ms) linear forwards}
-  .gal-prog.paused i{animation-play-state:paused}
-  @keyframes galrun{from{width:0}to{width:100%}}
-  @media (prefers-reduced-motion:reduce){.gal-shot img{transition:none}.gal-prog{display:none}}
-  .gal-cap{margin:18px 2px 0;max-width:70ch}
-  .gal-cap h3{margin:0 0 4px;font-size:19px}
-  .gal-cap p{margin:0;color:var(--muted);font-size:15.5px}
-  .gal-lb{position:fixed;inset:0;z-index:50;background:rgba(5,6,8,.92);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
-  .gal-lb.on{display:flex}
-  .gal-lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .vid-frame video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0b0d10}
 </style>
 </head>
 <body>
@@ -316,14 +297,14 @@
     <div class="wrap">
       <p class="eyebrow">O sistema por dentro</p>
       <h2 class="serif">Veja como é no dia a dia da oficina</h2>
-      <p class="sub">Telas reais do DT Nexus CRM, com dados de demonstração. As telas passam sozinhas; toque para ampliar.</p>
-      <div class="gal-tabs" role="tablist" aria-label="Telas do sistema" id="galTabs"></div>
-      <div class="gal-frame">
+      <p class="sub">Dois minutos do DT Nexus CRM funcionando, com telas reais e dados de demonstração.</p>
+      <div class="gal-frame vid-frame">
         <div class="gal-bar"><i></i><i></i><i></i><span>DT Nexus CRM</span></div>
-        <button class="gal-shot" id="galShot" type="button" aria-label="Ampliar imagem"><img id="galImg" alt="" width="1366" height="610" loading="lazy" decoding="async"></button>
-        <div class="gal-prog" id="galProg" aria-hidden="true"><i id="galProgI"></i></div>
+        <video id="demoVideo" controls preload="metadata" playsinline poster="assets/video/dtnexus-demo-poster.jpg" aria-label="Vídeo de apresentação do DT Nexus CRM, com 2 minutos">
+          <source src="assets/video/dtnexus-demo.mp4" type="video/mp4">
+          Seu navegador não reproduz vídeo. <a href="assets/video/dtnexus-demo.mp4">Baixar o vídeo</a>.
+        </video>
       </div>
-      <div class="gal-cap" aria-live="polite"><h3 id="galTitle"></h3><p id="galText"></p></div>
     </div>
   </section>
 
@@ -469,94 +450,6 @@ document.getElementById('y').textContent = new Date().getFullYear();
     if (reduce) return;
     if (document.hidden) cancelAnimationFrame(raf); else { cancelAnimationFrame(raf); frame(); }
   });
-})();
-</script>
-<div class="gal-lb" id="galLb" role="dialog" aria-label="Imagem ampliada"><img id="galLbImg" alt=""></div>
-<script>
-(function(){
-  var items=[
-    {k:"patio",t:"Gestão de pátio",d:"Todos os carros em um quadro Kanban: recepção, aguardando peças, na oficina, teste de rodagem, pronto e entregue. O que está atrasado aparece em destaque.",a:"Quadro Kanban da gestão de pátio, com os carros por etapa do serviço"},
-    {k:"lista",t:"Lista do pátio",d:"A mesma operação em formato de lista, com placa, cliente, tempo na etapa e o mecânico responsável. Dá para mudar a etapa direto na linha.",a:"Lista do pátio com placa, cliente, etapa e responsável"},
-    {k:"entrada",t:"Entrada de veículo",d:"Cliente e carro cadastrados de uma vez: telefone, placa, chassi, quilometragem, serviço de interesse e idioma dos avisos.",a:"Formulário de cadastro de cliente e veículo"},
-    {k:"equipe",n:"Equipe",t:"Equipe e mecânico responsável",d:"Veja qual mecânico está com cada carro e escolha como a oficina trabalha: carro com responsável ou equipe aberta.",a:"Tela de equipe com os carros e o mecânico responsável por cada um"},
-    {k:"chat",t:"Chat interno",d:"Balcão e oficina conversam dentro do sistema, sem recado em papel e sem grito pelo pátio.",a:"Chat interno entre balcão e mecânico"},
-    {k:"os",t:"Ordem de serviço",d:"Execução, peças e serviços, checklist, histórico e faturamento na mesma O.S. Gere o PDF ou mande o orçamento pelo WhatsApp.",a:"Painel da ordem de serviço com abas de execução, peças, checklist, histórico e faturamento"},
-    {k:"zap",n:"WhatsApp",t:"Central de atendimento (Nexus Zap)",d:"Converse com o cliente pelo número da oficina, dentro do sistema: textos, PDF de orçamento e macros prontas, com o histórico de cada carro. A central fica fixa em qualquer aba ou flutua por cima do sistema, e você continua navegando enquanto atende.",a:"Central de atendimento por WhatsApp com a conversa do cliente e o orçamento"},
-    {k:"servicos",n:"Serviços",t:"Serviços e mão de obra",d:"Cadastre cada serviço com custo, valor da mão de obra e margem. Na ordem de serviço, é só escolher.",a:"Catálogo de serviços e mão de obra com custo, valor e margem"},
-    {k:"estoque",n:"Estoque",t:"Estoque e serviços",d:"Peças com custo, venda, margem e alerta de estoque baixo, mais o catálogo de serviços. Tudo vai direto para a ordem de serviço.",a:"Tela de estoque com peças, custo, venda, margem e aviso de estoque baixo"},
-    {k:"planilha",t:"Planilha operacional",d:"Atualize vários carros de uma vez, em formato de planilha: cliente, placa, km, status e valores.",a:"Planilha operacional para editar várias entradas do pátio"},
-    {k:"escuro",t:"Modo escuro",d:"Claro ou escuro, como ficar melhor para a recepção ou para a oficina.",a:"Gestão de pátio no modo escuro"},
-    {k:"login",t:"Acesso ao painel",d:"Entrada segura, com código de confirmação por e-mail, em português, inglês ou espanhol.",a:"Tela de login do DT Nexus CRM"}
-  ];
-  var tabs=document.getElementById('galTabs'),img=document.getElementById('galImg'),
-      tt=document.getElementById('galTitle'),tx=document.getElementById('galText'),
-      lb=document.getElementById('galLb'),lbi=document.getElementById('galLbImg'),
-      shot=document.getElementById('galShot'),btns=[],cur=0;
-  var MS=6000,timer=null,hover=false,seen=false,reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,
-      prog=document.getElementById('galProg'),progI=document.getElementById('galProgI'),first=true;
-  prog.style.setProperty('--gal-ms',MS+'ms');
-  function preload(i){var n=new Image();n.src='assets/prints/'+items[i].k+'.webp'}
-  function show(i,instant){
-    cur=i;var it=items[i];
-    function apply(){
-      img.src='assets/prints/'+it.k+'.webp';img.alt=it.a;
-      tt.textContent=it.t;tx.textContent=it.d;
-      img.classList.remove('fade');
-    }
-    if(instant||first||reduce){apply()}
-    else{img.classList.add('fade');setTimeout(apply,180)}
-    first=false;
-    btns.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});
-    var b=btns[i];if(b&&tabs.scrollWidth>tabs.clientWidth){tabs.scrollTo({left:b.offsetLeft-(tabs.clientWidth-b.offsetWidth)/2,behavior:reduce?'auto':'smooth'})}
-    preload((i+1)%items.length);
-    restart();
-  }
-  function restart(){
-    clearTimeout(timer);
-    progI.classList.remove('run');void progI.offsetWidth;
-    if(reduce||!seen||document.hidden||lb.classList.contains('on'))return;
-    progI.classList.add('run');
-    prog.classList.toggle('paused',hover);
-    if(!hover)timer=setTimeout(next,MS);
-  }
-  function next(){show((cur+1)%items.length)}
-  function prev(){show((cur-1+items.length)%items.length)}
-  function setHover(v){
-    hover=v;if(reduce||!seen)return;
-    if(v){clearTimeout(timer);prog.classList.add('paused')}
-    else restart();
-  }
-  items.forEach(function(it,i){
-    var b=document.createElement('button');
-    b.type='button';b.setAttribute('role','tab');b.textContent=it.n||it.t;
-    b.addEventListener('click',function(){show(i)});
-    tabs.appendChild(b);btns.push(b);
-  });
-  var frame=shot.parentNode;
-  frame.addEventListener('mouseenter',function(){setHover(true)});
-  frame.addEventListener('mouseleave',function(){setHover(false)});
-  var sx=null;
-  shot.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
-  shot.addEventListener('touchend',function(e){
-    if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;
-    if(Math.abs(dx)>40){dx<0?next():prev();shot.dataset.swiped='1';setTimeout(function(){delete shot.dataset.swiped},350)}
-  });
-  shot.addEventListener('click',function(){
-    if(shot.dataset.swiped)return;
-    lbi.src=img.src;lbi.alt=img.alt;lb.classList.add('on');clearTimeout(timer);prog.classList.add('paused');
-  });
-  function closeLb(){lb.classList.remove('on');restart()}
-  lb.addEventListener('click',closeLb);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))closeLb()});
-  document.addEventListener('visibilitychange',function(){document.hidden?clearTimeout(timer):restart()});
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      var v=es[0].isIntersecting;
-      if(v&&!seen){seen=true;restart()}
-      else if(!v&&seen){seen=false;clearTimeout(timer);progI.classList.remove('run')}
-    },{threshold:.35}).observe(frame);
-  }
-  show(0,true);
 })();
 </script>
 </body>
