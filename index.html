@@ -153,6 +153,11 @@
   .plan li::before{content:"✓";color:var(--gold2);font-weight:800}
   .fine{color:var(--muted);font-size:13.5px;text-align:center;margin:22px auto 0;max-width:62ch}
 
+  /* nichos */
+  .niches{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
+  .niches span{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:15px}
+  .niches span b{color:var(--gold2);font-weight:600}
+
   /* faq */
   .faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
   details{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:0 20px}
@@ -248,6 +253,20 @@
       <div>App do mecânico no celular</div>
     </div>
   </div>
+
+  <section id="nichos" style="padding:44px 0 8px">
+    <div class="wrap">
+      <p class="eyebrow">Para o seu tipo de negócio</p>
+      <p class="sub" style="margin-bottom:18px">Pensado para autocenters e oficinas mecânicas. Na primeira entrada você escolhe o seu tipo de negócio e as etapas do pátio já ganham os nomes que a sua equipe usa.</p>
+      <div class="niches">
+        <span><b>Autocenter e mecânica</b></span>
+        <span>Moto peças e oficina de moto</span>
+        <span>Funilaria e pintura</span>
+        <span>Estética automotiva</span>
+        <span>Auto elétrica</span>
+      </div>
+    </div>
+  </section>
 
   <section id="recursos">
     <div class="wrap">
@@ -356,6 +375,7 @@
       </div>
       <div class="faq">
         <details><summary>Preciso instalar alguma coisa?</summary><p>Não. O sistema funciona pelo navegador, no computador e no celular. O mecânico também tem o próprio acesso pelo celular.</p></details>
+        <details><summary>Serve para o meu tipo de oficina?</summary><p>Serve para autocenters, oficinas mecânicas, moto peças com oficina, funilaria e pintura, estética automotiva e auto elétrica. A escolha do tipo de negócio muda os nomes das etapas do pátio (por exemplo, "Na Bancada" na moto peças); os recursos são os mesmos para todos, e você ainda pode renomear cada etapa.</p></details>
         <details><summary>Posso testar antes de pagar?</summary><p>Sim. Você começa com 30 dias de teste e só assina se quiser continuar.</p></details>
         <details><summary>O WhatsApp tem algum custo a mais?</summary><p>O DT Nexus não cobra nada a mais pelo WhatsApp: o WhatsApp Web e a integração com a API oficial da Meta vêm em todos os planos. Na API oficial, o seu autocenter usa a própria conta na Meta, e a Meta pode cobrar tarifas dela, direto nessa conta, por certos tipos de mensagem, como modelos aprovados enviados fora da janela de atendimento de 24 horas. Confira a tabela de preços da Meta antes de ativar.</p></details>
         <details><summary>Os dados da minha oficina ficam separados dos de outras?</summary><p>Sim. Cada oficina tem os próprios dados, isolados das demais, e cada pessoa da equipe acessa de acordo com o seu perfil.</p></details>
