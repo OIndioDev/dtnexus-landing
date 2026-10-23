@@ -158,6 +158,11 @@
   .niches span{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:15px}
   .niches span b{color:var(--gold2);font-weight:600}
 
+  .niche-cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:6px}
+  .niche-card{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);transition:transform .25s,border-color .25s,box-shadow .25s}
+  .niche-card:hover{transform:translateY(-3px);border-color:rgba(228,186,104,.5);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+  .niche-card img{display:block;width:100%;height:auto}
+
   /* faq */
   .faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
   details{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:0 20px}
@@ -258,12 +263,12 @@
     <div class="wrap">
       <p class="eyebrow">Para o seu tipo de negócio</p>
       <p class="sub" style="margin-bottom:18px">Pensado para autocenters e oficinas mecânicas. Na primeira entrada você escolhe o seu tipo de negócio e as etapas do pátio já ganham os nomes que a sua equipe usa.</p>
-      <div class="niches">
-        <span><b>Autocenter e mecânica</b></span>
-        <span>Moto peças e oficina de moto</span>
-        <span>Funilaria e pintura</span>
-        <span>Estética automotiva</span>
-        <span>Auto elétrica</span>
+      <div class="niche-cards">
+        <figure class="niche-card"><img src="assets/niches/autocenter.svg" width="600" height="380" alt="Autocenter e mecânica: do balcão ao mecânico, todo mundo na mesma página" loading="lazy" decoding="async"></figure>
+        <figure class="niche-card"><img src="assets/niches/moto-pecas.svg" width="600" height="380" alt="Moto peças: vendeu a peça e o mecânico já assume a moto" loading="lazy" decoding="async"></figure>
+        <figure class="niche-card"><img src="assets/niches/funilaria-pintura.svg" width="600" height="380" alt="Funilaria e pintura: cada carro na etapa certa, da lataria ao polimento" loading="lazy" decoding="async"></figure>
+        <figure class="niche-card"><img src="assets/niches/estetica-automotiva.svg" width="600" height="380" alt="Estética automotiva: brilho entregue no prazo, cliente avisado no WhatsApp" loading="lazy" decoding="async"></figure>
+        <figure class="niche-card"><img src="assets/niches/auto-eletrica.svg" width="600" height="380" alt="Auto elétrica: diagnóstico, peça e instalação sem perder o recado" loading="lazy" decoding="async"></figure>
       </div>
     </div>
   </section>

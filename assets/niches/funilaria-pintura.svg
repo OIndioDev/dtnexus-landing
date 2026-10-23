@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380" role="img" aria-label="Funilaria e pintura: cada carro na etapa certa, da lataria ao polimento">
+  <defs>
+    <radialGradient id="g" cx="78%" cy="18%" r="75%"><stop offset="0" stop-color="#c9a24b" stop-opacity=".28"/><stop offset="1" stop-color="#c9a24b" stop-opacity="0"/></radialGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c97f"/><stop offset="1" stop-color="#c9a24b"/></linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="#12151a"/>
+  <rect width="600" height="380" fill="url(#g)"/>
+  <rect x=".5" y=".5" width="599" height="379" rx="0" fill="none" stroke="#262c35"/>
+  <g transform="translate(490 112) scale(1.35)" fill="none" stroke="url(#b)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-44 14 L-34 -8 Q-30 -16 -20 -16 H18 Q28 -16 34 -6 L44 14 Z"/><path d="M-44 14 V28 H44 V14"/><circle cx="-24" cy="30" r="8"/><circle cx="24" cy="30" r="8"/><path d="M-22 -16 L-16 -30 M0 -16 V-34 M22 -16 L18 -30"/></g>
+  <rect x="40" y="214" width="5" height="26" rx="2" fill="url(#b)"/>
+  <text x="58" y="235" font-family="Georgia,'Palatino Linotype',serif" font-size="30" font-weight="700" fill="#eceff3">Funilaria e pintura</text>
+  <text x="40" y="288" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" fill="#c3cad3">Cada carro na etapa certa,</text>
+  <text x="40" y="318" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" fill="#c3cad3">da lataria ao polimento.</text>
+</svg>
