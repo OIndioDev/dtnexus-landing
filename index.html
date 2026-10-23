@@ -210,6 +210,15 @@
   .niche-cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
   .niche-card{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
   .niche-card img{display:block;width:100%;height:auto}
+  .nc{position:relative;margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:8/5;background:var(--panel);isolation:isolate;transition:border-color .25s,box-shadow .25s}
+  .nc:hover{border-color:rgba(228,186,104,.5);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+  .nc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}
+  .nc:hover img{transform:scale(1.05)}
+  .nc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,12,15,.96) 0%,rgba(10,12,15,.74) 38%,rgba(10,12,15,.12) 68%)}
+  .nc figcaption{position:absolute;left:0;right:0;bottom:0;padding:0 20px 18px}
+  .nc h3{display:flex;align-items:center;gap:10px;margin:0 0 5px;font-size:19px;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+  .nc h3::before{content:"";width:4px;height:18px;border-radius:2px;background:linear-gradient(var(--gold2),#a88436)}
+  .nc p{margin:0;color:#d9dde4;font-size:14.5px;line-height:1.45;text-shadow:0 1px 8px rgba(0,0,0,.85)}
   .rec{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
   @media(min-width:800px){.rec{grid-template-columns:1fr 1fr}}
   .rec div{padding:16px 20px;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--muted)}
@@ -283,11 +292,11 @@
       <h2 class="serif">Pensado para a rotina de cada oficina</h2>
       <p class="sub">A escolha do tipo de negócio muda os nomes das etapas do pátio. Os recursos são os mesmos para todos, e você ainda pode renomear cada etapa.</p>
       <div class="niche-cards">
-        <figure class="niche-card"><img src="assets/niches/autocenter.svg" width="600" height="380" alt="Autocenter e mecânica: do balcão ao mecânico, todo mundo na mesma página" loading="lazy" decoding="async"></figure>
-        <figure class="niche-card"><img src="assets/niches/moto-pecas.svg" width="600" height="380" alt="Moto peças: vendeu a peça e o mecânico já assume a moto" loading="lazy" decoding="async"></figure>
-        <figure class="niche-card"><img src="assets/niches/funilaria-pintura.svg" width="600" height="380" alt="Funilaria e pintura: cada carro na etapa certa, da lataria ao polimento" loading="lazy" decoding="async"></figure>
-        <figure class="niche-card"><img src="assets/niches/estetica-automotiva.svg" width="600" height="380" alt="Estética automotiva: brilho entregue no prazo, cliente avisado no WhatsApp" loading="lazy" decoding="async"></figure>
-        <figure class="niche-card"><img src="assets/niches/auto-eletrica.svg" width="600" height="380" alt="Auto elétrica: diagnóstico, peça e instalação sem perder o recado" loading="lazy" decoding="async"></figure>
+        <figure class="nc"><img src="assets/niches/autocenter.webp" width="800" height="500" alt="Oficina com carros no elevador e capô aberto" loading="lazy" decoding="async"><figcaption><h3>Autocenter e mecânica</h3><p>Do balcão ao mecânico, todo mundo na mesma página.</p></figcaption></figure>
+        <figure class="nc"><img src="assets/niches/moto-pecas.webp" width="800" height="500" alt="Moto desmontada com as peças organizadas" loading="lazy" decoding="async"><figcaption><h3>Moto peças</h3><p>Vendeu a peça e o mecânico já assume a moto.</p></figcaption></figure>
+        <figure class="nc"><img src="assets/niches/funilaria-pintura.webp" width="800" height="500" alt="Dois profissionais preparando um carro para pintura na cabine" loading="lazy" decoding="async"><figcaption><h3>Funilaria e pintura</h3><p>Cada carro na etapa certa, da lataria ao polimento.</p></figcaption></figure>
+        <figure class="nc"><img src="assets/niches/estetica-automotiva.webp" width="800" height="500" alt="Dois profissionais polindo um carro preto" loading="lazy" decoding="async"><figcaption><h3>Estética automotiva</h3><p>Brilho entregue no prazo, cliente avisado no WhatsApp.</p></figcaption></figure>
+        <figure class="nc"><img src="assets/niches/auto-eletrica.webp" width="800" height="500" alt="Dois profissionais fazendo diagnóstico elétrico em um carro" loading="lazy" decoding="async"><figcaption><h3>Auto elétrica</h3><p>Diagnóstico, peça e instalação sem perder o recado.</p></figcaption></figure>
       </div>
     </div>
   </section>
