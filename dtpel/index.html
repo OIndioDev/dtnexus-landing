@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tráfego pago e gestão de mídia para negócios de serviço | Dtpel Media Solutions</title>
+<meta name="description" content="Dtpel Media Solutions: tráfego pago e gestão de mídia para negócios de serviço. Comece com um diagnóstico grátis de 20 minutos da sua presença online (Google Meu Negócio, Instagram e anúncios).">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Tráfego pago e gestão de mídia para negócios de serviço | Dtpel Media Solutions">
+<meta property="og:description" content="Anúncios e gestão de mídia para negócios de serviço. Medimos contato, não curtida. Diagnóstico grátis de 20 minutos da sua presença online.">
+<!-- [PREENCHER: imagem 1200x630] Quando existir a imagem, publique-a e descomente a linha abaixo com o endereço completo:
+<meta property="og:image" content="https://SEU-DOMINIO/og-1200x630.png">
+-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23121212'/%3E%3Cpath d='M18 14h16c11 0 18 8 18 18s-7 18-18 18H18z' fill='none' stroke='%23E3B93C' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: página escura e centrada, seções em faixas, dourado fino como único acento, sem fotografia */
+:root{
+  --bg:#121212;
+  --bg-2:#191919;
+  --card:#0b0b0b;
+  --line:rgba(227,185,60,.28);
+  --line-soft:#2a2a2a;
+  --fg:#f2eee6;
+  --muted:#aaa497;
+  --gold:#E3B93C;
+  --gold-hi:#F8DB74;
+  --gold-lo:#C9971C;
+  --ink:#1a1303;
+  --font-display:'Montserrat','Arial Narrow',Arial,sans-serif;
+  --font-body:'Nunito Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:4px}
+
+/* faixa de aviso e cabeçalho */
+.notice{background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));color:var(--ink);text-align:center;font-family:var(--font-display);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:1px solid var(--line-soft)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.brand span{color:var(--gold)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:.95rem;letter-spacing:.01em;text-decoration:none;border-radius:4px;padding:14px 28px;border:0;cursor:pointer}
+.btn-gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));color:var(--ink);box-shadow:0 0 0 1px rgba(255,255,255,.18) inset,0 8px 24px rgba(201,151,28,.22)}
+.btn-gold:hover{filter:brightness(1.07)}
+.btn-sm{padding:8px 18px;font-size:.88rem}
+.btn-line{background:transparent;color:var(--gold-hi);border:1px solid var(--gold);box-shadow:none}
+.btn-line:hover{background:rgba(227,185,60,.12)}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(56px,10vw,120px);background:radial-gradient(900px 420px at 85% 10%,rgba(227,185,60,.14),transparent 70%),radial-gradient(700px 360px at 0% 100%,rgba(227,185,60,.06),transparent 70%),var(--bg)}
+.hero .wrap{display:grid;gap:28px;max-width:860px}
+.hero h1{font-weight:800;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.01em}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:56ch}
+.hero .note{font-size:.85rem;color:var(--muted)}
+.hero .offer{font-size:1rem;color:var(--fg)}
+.hero .offer a{color:var(--gold-hi);text-underline-offset:4px}
+.hero .go{display:grid;gap:12px;justify-items:start}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border:0;margin:0}
+
+/* seções */
+section{padding-block:clamp(52px,8vw,92px)}
+.band{background:var(--bg-2);border-block:1px solid var(--line-soft)}
+.center{text-align:center}
+.center .intro{margin-inline:auto}
+.title{font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);max-width:24ch}
+.center .title{margin-inline:auto}
+.title-line{width:72px;height:3px;background:linear-gradient(90deg,var(--gold-hi),var(--gold-lo));margin:20px auto 0;border-radius:2px}
+.intro{margin-top:18px;color:var(--muted);max-width:60ch}
+
+.checks{list-style:none;margin:40px auto 0;padding:0;display:grid;gap:16px;max-width:680px;text-align:left}
+.checks li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;align-items:start;background:var(--card);border:1px solid var(--line-soft);border-radius:6px;padding:18px 20px}
+.tick{width:24px;height:24px;border-radius:50%;background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));display:grid;place-items:center;margin-top:2px}
+.tick svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+
+.hit{max-width:760px;margin-inline:auto}
+.hit h2{font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:.01em;color:var(--gold)}
+.hit p{margin-top:20px;font-size:1.1rem}
+
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:44px;text-align:center}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px 22px}
+.tile svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+.tile h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.tile p{color:var(--muted);font-size:.96rem}
+
+.about{display:grid;gap:28px;max-width:760px;margin-inline:auto;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;list-style:none;margin:0;padding:0}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:.92rem;color:var(--fg)}
+.chips li.dim{border-color:var(--line-soft);color:var(--muted);font-size:.85rem}
+.founder{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:center;text-align:left;background:var(--card);border:1px dashed var(--line);border-radius:6px;padding:20px}
+.founder .photo{width:96px;height:96px;border-radius:50%;border:1px dashed var(--gold);display:grid;place-items:center;color:var(--muted);font-size:.72rem;text-align:center;line-height:1.3;padding:6px}
+.founder p{color:var(--fg)}
+.pending{color:var(--gold-hi);font-weight:700}
+.minimo{margin:22px auto 0;max-width:62ch;padding:14px 18px;border:1px solid var(--line);border-radius:6px;background:var(--card);font-size:.98rem}
+@media (max-width:480px){.founder{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:40px;text-align:left}
+.plan h3{font-size:1.5rem;font-weight:800}
+.plan .for{font-family:var(--font-display);font-weight:600;font-size:.95rem;line-height:1.4;color:var(--gold-hi);margin:10px 0 18px}
+.plan .sub{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.plan li{padding-left:22px;position:relative;font-size:.98rem}
+.plan li::before{content:"";position:absolute;left:0;top:.65em;width:10px;height:2px;background:var(--gold)}
+.fine{margin:22px auto 0;color:var(--muted);font-size:.93rem;max-width:70ch}
+.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:28px;text-align:left}
+.extras h3{font-size:1.1rem;margin-bottom:8px}
+.extras p{color:var(--muted);font-size:.96rem}
+
+/* simulador */
+.sim{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:16px;margin-top:40px;align-items:start;text-align:left}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 28px}
+.opt{font-family:var(--font-display);font-weight:700;font-size:.9rem;color:var(--fg);background:var(--bg);border:2px solid var(--line-soft);border-radius:4px;padding:10px 20px;cursor:pointer}
+.opt[aria-pressed="true"]{border-color:var(--gold);background:rgba(227,185,60,.12);color:var(--gold-hi)}
+.sim-label{font-weight:700;font-size:.95rem}
+.sim-value{font-family:var(--font-display);font-weight:800;font-size:clamp(1.9rem,5vw,2.8rem);color:var(--gold-hi);margin:6px 0 12px}
+input[type=range]{width:100%;padding:0;border:0;background:transparent;accent-color:var(--gold);height:32px}
+.scale{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}
+.sim dl{margin:0}
+.sim .row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+.sim .row dt{color:var(--muted)}
+.sim .row dd{margin:0;font-family:var(--font-display);font-weight:700;text-align:right}
+.sim .row.total{border-bottom:0;padding-top:16px}
+.sim .row.total dt{color:var(--fg);font-weight:700}
+.sim .row.total dd{font-size:1.5rem;color:var(--gold-hi)}
+.disc{margin-top:14px;font-size:.84rem;color:var(--muted)}
+
+/* perguntas */
+.faq{max-width:760px;margin:40px auto 0;display:grid;gap:10px;text-align:left}
+details{background:var(--card);border:1px solid var(--line-soft);border-radius:6px}
+summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:var(--font-display);font-weight:700;font-size:1rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details[open]{border-color:var(--line)}
+details p{padding:0 20px 20px;color:var(--muted)}
+
+/* contato */
+.contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start;text-align:left}
+form{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px;display:grid;gap:18px}
+label{display:grid;gap:6px;font-weight:700;font-size:.95rem}
+input,select{font:inherit;font-weight:400;color:var(--fg);background:var(--bg);border:1px solid var(--line-soft);border-radius:4px;padding:12px 14px;width:100%}
+input::placeholder{color:var(--muted)}
+.msg{min-height:1.4em;font-size:.9rem;color:var(--gold-hi)}
+.privacy{font-size:.82rem;color:var(--muted)}
+
+footer{padding-block:32px;border-top:1px solid var(--line-soft);color:var(--muted);font-size:.9rem;text-align:center}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center}
+footer a{text-decoration:none;border-bottom:1px solid var(--line-soft)}
+
+@media (max-width:860px){.sim,.contact{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<div class="notice">Tráfego pago e gestão de mídia para negócios de serviço</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo">Dtpel <span>Media</span> Solutions</a>
+    <a class="btn btn-line btn-sm" id="topo-wa" href="#contato" target="_blank" rel="noopener">Fale conosco</a>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Seu serviço é bom. O problema é que quem procura não encontra.</h1>
+      <p class="lead">A Dtpel Media Solutions monta e acompanha anúncios para quem ainda não aparece na hora em que o cliente procura. O que a gente mede é contato, não curtida.</p>
+      <p class="offer">Comece por um <strong>diagnóstico grátis de 20 minutos</strong> da sua presença online (Google Meu Negócio, Instagram e anúncios). <a href="#contato">Pedir o diagnóstico</a></p>
+    </div>
+  </div>
+  <hr class="rule">
+
+  <section class="center">
+    <div class="wrap">
+      <h2 class="title">Você se reconhece aqui?</h2>
+      <div class="title-line"></div>
+      <ul class="checks">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></span><span>O serviço é bom, mas quem procura esse tipo de serviço na sua cidade não chega até você.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></span><span>Você posta ou anuncia e tem curtida e visualização, mas pouca mensagem e pouca ligação.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></span><span>Você não sabe se o Google, o Instagram e os anúncios estão trazendo cliente ou só ocupando tempo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band center">
+    <div class="wrap hit">
+      <h2>Onde o problema costuma estar</h2>
+      <p>Se você se reconheceu em algum desses pontos, o problema provavelmente não está no serviço. Está em como ele chega a quem procura. É isso que a Dtpel organiza, com método e medindo contato, não curtida.</p>
+    </div>
+  </section>
+
+  <section class="center" id="metodo">
+    <div class="wrap">
+      <h2 class="title">Como a Dtpel trabalha</h2>
+      <div class="title-line"></div>
+      <p class="intro">Método e acompanhamento, do primeiro diagnóstico ao relatório de métricas.</p>
+      <div class="grid3">
+        <div class="tile"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><h3>Diagnóstico</h3><p>Entendemos o seu negócio, o seu público e o que você quer receber: mensagem, ligação ou visita.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6"/></svg><h3>Campanha</h3><p>Montamos o anúncio para esse objetivo, na plataforma onde o seu cliente está.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"/></svg><h3>Métrica de contato</h3><p>Acompanhamos contatos reais. Curtida sozinha não entra na conta.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><h3>Ajuste contínuo</h3><p>O que não traz cliente sai. O que traz recebe mais atenção.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><h3>Relatório de métricas</h3><p>Você acompanha o que foi gasto e quanto custou cada contato, em relatório quinzenal.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><circle cx="9" cy="9" r="1.5"/><polyline points="3 16 9 11 14 15 17 13 21 17"/></svg><h3>Criativos e copy</h3><p>No plano Completo, a Dtpel produz as peças e os textos dos anúncios.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="nichos">
+    <div class="wrap about">
+      <div>
+        <h2 class="title">Quem é a Dtpel</h2>
+        <div class="title-line"></div>
+      </div>
+      <!-- CRM desligado por enquanto (o DTNEXUS CRM ainda não está no ar para clientes).
+           Para reativar, acrescente aqui uma frase como: "O tráfego traz o cliente, o CRM atende e mede do clique até a venda fechada."
+           e traga de volta o cartão "Atendimento organizado" na seção #planos (grade .extras, ao lado da landing page). -->
+      <p>A Dtpel Media Solutions é uma agência de Manaus que cuida de tráfego pago e gestão de mídia para negócios de serviço.</p>
+      <ul class="chips">
+        <li>Clínicas</li>
+        <li>Estética e beleza</li>
+        <li>Escritórios</li>
+        <li>Oficinas</li>
+        <li>Escolas e cursos</li>
+        <li>Autônomos</li>
+        <li>E outros serviços</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="center" id="planos">
+    <div class="wrap">
+      <h2 class="title">Dois jeitos de trabalhar juntos</h2>
+      <div class="title-line"></div>
+      <div class="plans">
+        <article class="card plan">
+          <h3>Gestão</h3>
+          <p class="for">Você envia as peças, nós rodamos, acompanhamos e otimizamos.</p>
+          <ul>
+            <li>Subimos e gerimos as campanhas com as peças que você envia</li>
+            <li>Campanhas e otimização</li>
+            <li>Relatório quinzenal de métricas</li>
+            <li>Até 2 plataformas</li>
+          </ul>
+        </article>
+        <article class="card plan">
+          <h3>Completo</h3>
+          <p class="for">Nós também criamos: estratégia, textos e peças.</p>
+          <ul>
+            <li>Tudo do plano Gestão, mais:</li>
+            <li>Estratégia e copy (textos dos anúncios)</li>
+            <li>Até 8 peças de criativo por mês</li>
+            <li>1 reunião mensal</li>
+          </ul>
+        </article>
+      </div>
+      <p class="fine">Os valores finais são combinados pelo WhatsApp, conforme o seu caso; o simulador abaixo dá uma estimativa. A verba dos anúncios é sua e vai direto para a plataforma. O contrato inicial é de 3 meses, porque o resultado aparece depois da montagem.</p>
+      <div class="extras">
+        <div class="card"><h3>Landing page sob medida</h3><p>Uma página feita para o seu serviço, pensada para gerar contato. Valor à parte.</p></div>
+              </div>
+    </div>
+  </section>
+
+  <section class="band center" id="simulador">
+    <div class="wrap">
+      <h2 class="title">Quanto custa a gestão para a sua verba</h2>
+      <div class="title-line"></div>
+      <p class="minimo"><strong>Verba mínima recomendada:</strong> R$ 1.000 por mês em anúncios. A mensalidade é fixa e não muda com a verba. O resultado depende da verba e da sua oferta, e com verba menor os relatórios trazem menos dados para ajustar.</p>
+      <p class="intro">A mensalidade cobre até R$ 3.000 de verba por mês. O que passar disso paga 15% sobre o excedente, porque mais verba significa mais campanhas e mais acompanhamento.</p>
+      <div class="sim">
+        <div class="card">
+          <p class="sim-label" id="lbl-plano">Plano</p>
+          <div class="seg" role="group" aria-labelledby="lbl-plano">
+            <button type="button" class="opt" id="p-gestao" data-v="1500" aria-pressed="false">Gestão</button>
+            <button type="button" class="opt" id="p-completo" data-v="2500" aria-pressed="true">Completo</button>
+          </div>
+          <label for="verba-range" class="sim-label">Verba mensal de anúncios</label>
+          <p class="sim-value" id="verba-out" aria-live="polite">R$ 3.000</p>
+          <input id="verba-range" type="range" min="1000" max="30000" step="500" value="3000">
+          <div class="scale"><span>R$ 1.000</span><span>R$ 30.000</span></div>
+                  </div>
+        <div class="card">
+          <dl aria-live="polite">
+            <div class="row"><dt>Mensalidade do plano</dt><dd id="o-base">R$ 2.500</dd></div>
+            <div class="row"><dt>Taxa sobre o que passar de R$ 3.000</dt><dd id="o-extra">R$ 0</dd></div>
+            <div class="row total"><dt>Investimento mensal em gestão</dt><dd id="o-total">R$ 2.500</dd></div>
+            <div class="row"><dt>Verba paga à plataforma</dt><dd id="o-verba">R$ 3.000</dd></div>
+          </dl>
+          <p class="disc">Estimativa para ajudar a planejar. Valores finais, escopo e contrato são combinados pelo WhatsApp. A verba de anúncio não é recebida nem repassada pela Dtpel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="center" id="perguntas">
+    <div class="wrap">
+      <h2 class="title">Perguntas frequentes</h2>
+      <div class="title-line"></div>
+      <div class="faq">
+        <details><summary>Preciso ter equipe de mídia?</summary><p>Não. No plano Gestão você envia as peças e nós rodamos, acompanhamos e otimizamos as campanhas. No plano Completo, nós também fazemos a estratégia, os textos e até 8 peças por mês.</p></details>
+        <details><summary>Quem paga os anúncios?</summary><p>Você. A verba vai direto para a plataforma (Meta, Google ou outra), com o seu meio de pagamento. A Dtpel não recebe nem repassa verba.</p></details>
+        <details><summary>Em quanto tempo aparece resultado?</summary><p>O primeiro mês é de montagem: diagnóstico, contas e campanhas. Os números ficam mais claros a partir do segundo mês. Não prometemos um número fixo de vendas, porque ele depende também da sua oferta e do seu atendimento.</p></details>
+        <details><summary>O diagnóstico grátis tem compromisso?</summary><p>Não. São 20 minutos olhando a sua presença online (Google Meu Negócio, Instagram e anúncios), com o que dá para melhorar. Se fizer sentido, falamos de plano; se não, você leva o diagnóstico.</p></details>
+        <details><summary>Quem controla o resultado?</summary><p>No plano Gestão, a estratégia, a oferta e as peças são suas, e nós administramos, acompanhamos e otimizamos o que você envia. Por isso o resultado depende da sua oferta, das suas peças e da verba, e com verba menor os relatórios trazem menos dados para ajustar. No plano Completo, nós também montamos a estratégia, os textos e as peças, com foco em medir o custo de cada contato e ajustar a campanha em cima desse número. Em nenhum dos dois prometemos número de vendas.</p></details>
+        <details><summary>Existe contrato?</summary><p>Sim. O prazo inicial é de 3 meses; depois disso, qualquer uma das partes pode encerrar com aviso de 30 dias.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contato">
+    <div class="wrap contact">
+      <div>
+        <h2 class="title">Peça o seu diagnóstico grátis de 20 minutos</h2>
+        <p class="intro">Olhamos a sua presença online (Google Meu Negócio, Instagram e anúncios) e mostramos o que dá para melhorar. Preencha abaixo e a conversa já abre no WhatsApp. Sem cadastro e sem compromisso.</p>
+      </div>
+      <form id="lead" novalidate>
+        <label for="nome">Seu nome
+          <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar" required>
+        </label>
+        <label for="negocio">Seu negócio e a cidade
+          <input id="negocio" name="negocio" type="text" placeholder="Ex.: clínica de estética, Manaus" required>
+        </label>
+        <label for="anuncia">Você anuncia hoje?
+          <select id="anuncia" name="anuncia">
+            <option>Ainda não anuncio</option>
+            <option>Anuncio, mas sem acompanhamento</option>
+            <option>Anuncio com ajuda de alguém</option>
+          </select>
+        </label>
+        <label for="verba">Verba mensal prevista para anúncios
+          <select id="verba" name="verba">
+            <option>Ainda não defini</option>
+            <option>Até R$ 1.000</option>
+            <option>De R$ 1.000 a R$ 3.000</option>
+            <option>Acima de R$ 3.000</option>
+          </select>
+        </label>
+        <label for="perfil">Seu Instagram ou o nome no Google (opcional)
+          <input id="perfil" name="perfil" type="text" placeholder="Ex.: @seunegocio">
+        </label>
+        <a id="enviar" class="btn btn-gold" href="#contato" target="_blank" rel="noopener" aria-disabled="true">Pedir diagnóstico grátis no WhatsApp</a>
+        <p class="msg" id="msg" role="status"></p>
+        <p class="privacy" id="privacy">Suas respostas vão apenas para a mensagem do WhatsApp. Esta página não guarda nada.</p>
+        <!-- Só mostrar se a medição for ligada (TRACKING.ligado = true): -->
+        <p class="privacy" id="privacy-link" hidden><a href="#">Política de privacidade</a> <span class="pending">[PREENCHER: link]</span></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Dtpel Media Solutions · Daniel dos Santos Oliveira · CNPJ 46.254.541/0001-47 · Manaus, AM</span>
+    <a href="https://www.instagram.com/dtpel_/" target="_blank" rel="noopener">Instagram @dtpel_</a>
+  </div>
+</footer>
+
+<script>
+  // ÚNICO lugar do número do WhatsApp (só dígitos, com DDI e DDD). Todos os links usam esta variável.
+  var WHATSAPP = "5592985685906";
+
+  // Medição: DESLIGADA por padrão. Para ligar: troque ligado para true, cole o Pixel/GA4 em iniciarMedicao(),
+  // preencha o link da política de privacidade (id="privacy-link") e confirme o texto novo da frase de privacidade.
+  var TRACKING = { ligado: false };
+  function iniciarMedicao() {
+    if (!TRACKING.ligado) { return; }
+    // [PREENCHER: colar aqui o código do Pixel/GA4]
+  }
+
+  var nome = document.getElementById("nome");
+  var negocio = document.getElementById("negocio");
+  var anuncia = document.getElementById("anuncia");
+  var verba = document.getElementById("verba");
+  var perfil = document.getElementById("perfil");
+  var btn = document.getElementById("enviar");
+  var topoWa = document.getElementById("topo-wa");
+  var msg = document.getElementById("msg");
+
+  function waLink(t) { return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t); }
+
+  function utms() {
+    if (!TRACKING.ligado) { return ""; }
+    var q = new URLSearchParams(window.location.search), out = "";
+    ["utm_source", "utm_medium", "utm_campaign"].forEach(function (k) {
+      var v = q.get(k);
+      if (v) { out += "\n" + k + ": " + v.slice(0, 80); }
+    });
+    return out;
+  }
+
+  var OFERTA = "quero o diagnóstico grátis de 20 minutos da minha presença online (Google Meu Negócio, Instagram e anúncios).";
+
+  function texto() {
+    var p = perfil.value.trim();
+    return "Olá! Vim pelo site da Dtpel Media Solutions e " + OFERTA + "\n" +
+      "Nome: " + nome.value.trim() + "\n" +
+      "Negócio e cidade: " + negocio.value.trim() + "\n" +
+      (p ? "Instagram/Google: " + p + "\n" : "") +
+      "Anuncia hoje: " + anuncia.value + "\n" +
+      "Verba mensal prevista: " + verba.value + utms();
+  }
+
+  function pronto() {
+    return nome.value.trim().length > 1 && negocio.value.trim().length > 2;
+  }
+
+  function atualizar() {
+    var ok = pronto() && WHATSAPP;
+    btn.setAttribute("aria-disabled", ok ? "false" : "true");
+    btn.href = ok ? waLink(texto()) : "#contato";
+    if (!WHATSAPP) { msg.textContent = "O número do WhatsApp ainda não foi configurado nesta página."; }
+    else { msg.textContent = ""; }
+  }
+
+  if (WHATSAPP) {
+    topoWa.href = waLink("Olá! Vim pelo site da Dtpel Media Solutions e " + OFERTA + utms());
+  }
+
+  btn.addEventListener("click", function (e) {
+    if (btn.getAttribute("aria-disabled") === "true") {
+      e.preventDefault();
+      if (WHATSAPP && !pronto()) { msg.textContent = "Preencha seu nome e o seu negócio para continuar."; }
+    }
+  });
+  [nome, negocio, anuncia, verba, perfil].forEach(function (el) {
+    el.addEventListener("input", atualizar);
+    el.addEventListener("change", atualizar);
+  });
+  document.getElementById("lead").addEventListener("submit", function (e) { e.preventDefault(); });
+  if (TRACKING.ligado) {
+    document.getElementById("privacy").textContent = "Usamos medição de visitas para melhorar a página. Suas respostas vão para a mensagem do WhatsApp.";
+    document.getElementById("privacy-link").hidden = false;
+  }
+  iniciarMedicao();
+  atualizar();
+
+  // Simulador: taxa de 15% só sobre a verba que passar de R$ 3.000
+  var BRL = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
+  var base = 2500;
+  var range = document.getElementById("verba-range");
+  var pG = document.getElementById("p-gestao");
+  var pC = document.getElementById("p-completo");
+
+  function simular() {
+    var v = Number(range.value);
+    var extra = Math.max(0, v - 3000) * 0.15;
+    var total = base + extra;
+    document.getElementById("verba-out").textContent = BRL.format(v);
+    document.getElementById("o-base").textContent = BRL.format(base);
+    document.getElementById("o-extra").textContent = BRL.format(extra);
+    document.getElementById("o-total").textContent = BRL.format(total);
+    document.getElementById("o-verba").textContent = BRL.format(v);
+  }
+  function escolher(el) {
+    base = Number(el.getAttribute("data-v"));
+    pG.setAttribute("aria-pressed", el === pG ? "true" : "false");
+    pC.setAttribute("aria-pressed", el === pC ? "true" : "false");
+    simular();
+  }
+  pG.addEventListener("click", function () { escolher(pG); });
+  pC.addEventListener("click", function () { escolher(pC); });
+  range.addEventListener("input", simular);
+  simular();
+</script>
+
+</body>
+</html>
