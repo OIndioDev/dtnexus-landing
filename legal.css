@@ -1,0 +1,31 @@
+/* Páginas legais do DT Nexus (Termos, Privacidade, Cancelamento e reembolso). Mesma paleta da landing. */
+:root{--bg:#0e1013;--bg2:#12151a;--panel:#171b21;--panel2:#1c2128;--line:#262c35;--text:#eceff3;--muted:#9aa4b0;--gold:#c9a24b;--gold2:#e6c97f;--gold-ink:#1b1405}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--gold2)}
+a:hover{color:var(--text)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:var(--bg2)}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700}
+.brand .logo{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--gold-ink);font-weight:800;font-size:15px}
+nav.legal-nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14.5px}
+nav.legal-nav a{color:var(--muted);text-decoration:none}
+nav.legal-nav a:hover,nav.legal-nav a[aria-current="page"]{color:var(--text)}
+main{padding:42px 0 64px}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.2;margin:0 0 6px}
+h2{font-size:20px;margin:34px 0 8px;color:var(--gold2)}
+p,li{color:#cfd5dd}
+p.meta{color:var(--muted);font-size:14px;margin:0 0 24px}
+ul{padding-left:22px}
+li{margin:4px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--text)}
+td{background:var(--panel)}
+.box{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:14px 18px;margin:18px 0}
+.box p{margin:4px 0}
+footer.legal-foot{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px}
+footer.legal-foot .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer.legal-foot a{color:var(--muted);text-decoration:none}
+footer.legal-foot a:hover{color:var(--text)}
