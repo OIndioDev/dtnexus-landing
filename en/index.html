@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DT Nexus CRM | Management software for auto repair shops</title>
+<meta name="description" content="Kanban shop floor, work orders, parts inventory and WhatsApp in one system for auto repair shops, body shops, detailers and motorcycle parts stores. 14-day free trial.">
+<link rel="canonical" href="https://www.dtnexusdev.com.br/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://www.dtnexusdev.com.br/">
+<link rel="alternate" hreflang="en" href="https://www.dtnexusdev.com.br/en/">
+<meta property="og:title" content="DT Nexus CRM | Management software for auto repair shops">
+<meta property="og:description" content="Kanban shop floor, work orders, parts inventory and WhatsApp in one system. 14-day free trial.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.dtnexusdev.com.br/en/">
+<meta property="og:image" content="https://www.dtnexusdev.com.br/assets/social/og-image.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1013">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/brand/icon-192.png">
+<style>
+:root{--bg:#0e1013;--bg2:#12151a;--panel:#171b21;--panel2:#1c2128;--line:#262c35;--text:#eceff3;--muted:#9aa4b0;--gold:#c9a24b;--gold2:#e6c97f;--gold-ink:#1b1405}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+header{position:sticky;top:0;z-index:5;background:rgba(14,16,19,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
+.logo{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--gold-ink);font-weight:800}
+nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14.5px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--gold-ink);font-weight:700;text-decoration:none;padding:13px 22px;border-radius:10px;border:0}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn.sm{padding:9px 16px;font-size:14px}
+.btn.block{display:block;text-align:center}
+.hero{padding:70px 0 54px;background:radial-gradient(900px 400px at 85% -10%,rgba(201,162,75,.14),transparent 60%)}
+.eyebrow{color:var(--gold2);font-size:13px;letter-spacing:.8px;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:0 0 18px;max-width:20ch}
+h1 em{color:var(--gold2);font-style:normal}
+h2{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:0 0 10px}
+.lead{color:var(--muted);font-size:clamp(17px,2.3vw,20px);max-width:56ch;margin:0 0 28px}
+.sub{color:var(--muted);margin:0 0 34px;max-width:62ch;font-size:17px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:62px 0}
+.band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:18px 20px}
+.card h3{margin:0 0 4px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.step{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 22px 22px 70px;position:relative}
+.step::before{content:counter(s);position:absolute;left:20px;top:20px;width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--gold-ink);font-weight:800;display:grid;place-items:center}
+.step h3{margin:0 0 4px;font-size:18px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.plans{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));max-width:860px;margin:0 auto}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px;position:relative}
+.plan.hl{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,162,75,.09),var(--panel) 45%)}
+.badge{position:absolute;top:-12px;left:28px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--gold-ink);font-weight:800;font-size:12px;padding:4px 12px;border-radius:99px}
+.plan h3{margin:0;font-size:18px;color:var(--muted);font-weight:600}
+.price{font-size:44px;font-weight:800;letter-spacing:-1px;margin:8px 0 2px}
+.price small{font-size:16px;color:var(--muted);font-weight:500;letter-spacing:0}
+.terms{color:var(--muted);font-size:14px;margin:0 0 20px;min-height:42px}
+.plan ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px;font-size:15px}
+.plan li{display:flex;gap:10px}
+.plan li::before{content:"✓";color:var(--gold2);font-weight:800}
+.fine{color:var(--muted);font-size:13.5px;text-align:center;margin:20px auto 0;max-width:68ch}
+.fine a{color:var(--gold2)}
+table.regions{width:100%;max-width:860px;margin:26px auto 0;border-collapse:collapse;font-size:15px}
+table.regions th,table.regions td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+table.regions th{background:var(--panel2)}
+table.regions td{background:var(--panel);color:var(--muted)}
+.faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:0 20px}
+summary{cursor:pointer;list-style:none;padding:17px 0;font-weight:600;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold2);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 18px;color:var(--muted);font-size:15.5px}
+.final{background:radial-gradient(700px 260px at 50% 0%,rgba(201,162,75,.16),transparent 70%),var(--panel);border:1px solid var(--line);border-radius:24px;padding:52px 22px;text-align:center}
+.final p{color:var(--muted);max-width:52ch;margin:0 auto 24px;font-size:17px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+footer a{text-decoration:none}
+footer a:hover{color:var(--text)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./"><span class="logo">DT</span><span>DT Nexus CRM</span></a>
+  <nav aria-label="Sections">
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#who">Who it's for</a>
+    <a href="#plans">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="../" hreflang="pt-BR">Português</a>
+  </nav>
+  <a class="btn sm" href="#contact">Start 14-day trial</a>
+</div></header>
+<main>
+  <div class="hero"><div class="wrap">
+    <p class="eyebrow">Management software for the auto trade</p>
+    <h1 class="serif">Run your shop floor from <em>one screen</em>.</h1>
+    <p class="lead">A Kanban board for every car, work orders, parts inventory and WhatsApp in one system. Every car has its stage, and your whole team sees the same information.</p>
+    <div class="cta"><a class="btn" href="#contact">Start 14-day trial</a><a class="btn ghost" href="#plans">See pricing</a></div>
+  </div></div>
+
+  <section id="how"><div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 class="serif">From first contact to daily use, in three steps</h2>
+    <p class="sub">Nothing to install: the system runs in your browser, on computer and phone.</p>
+    <div class="steps">
+      <div class="step"><h3>Talk to us</h3><p>Message us on WhatsApp or by e-mail and get access for your free trial.</p></div>
+      <div class="step"><h3>Set up your shop</h3><p>Pick your business type, which sets the stage names on the shop floor board, and add your team.</p></div>
+      <div class="step"><h3>Run your day</h3><p>Check cars in, move them through the stages, and keep customers informed on WhatsApp.</p></div>
+    </div>
+  </div></section>
+
+  <section id="features" class="band"><div class="wrap">
+    <p class="eyebrow">Features</p>
+    <h2 class="serif">Everything the shop needs, included in every plan</h2>
+    <p class="sub">Both plans have all features. WhatsApp Web and the official Meta API integration are included.</p>
+    <div class="grid">
+      <div class="card"><h3>Shop floor board</h3><p>A Kanban view with one lane per stage, so you always know where each car is.</p></div>
+      <div class="card"><h3>Work orders</h3><p>Open, price and track each job from check-in to delivery.</p></div>
+      <div class="card"><h3>Parts and services</h3><p>Keep your parts inventory and your service list in the same place as your orders.</p></div>
+      <div class="card"><h3>WhatsApp in the panel</h3><p>Talk to customers through WhatsApp Web or the official Meta API.</p></div>
+      <div class="card"><h3>Automations</h3><p>When a car changes stage, the customer is notified on WhatsApp.</p></div>
+      <div class="card"><h3>Mechanic app</h3><p>Your mechanics get their own access on their phones.</p></div>
+      <div class="card"><h3>Separate data per shop</h3><p>Each shop has its own data, and each person sees what their role allows.</p></div>
+      <div class="card"><h3>Three languages</h3><p>English, Spanish and Portuguese. Each person picks their own language.</p></div>
+    </div>
+  </div></section>
+
+  <section id="who"><div class="wrap">
+    <p class="eyebrow">Who it's for</p>
+    <h2 class="serif">Built for the routine of each kind of shop</h2>
+    <p class="sub">Choosing your business type changes the stage names on the board. Features are the same for everyone, and you can still rename each stage.</p>
+    <div class="grid">
+      <div class="card"><h3>Auto repair shops and auto centers</h3><p>Diagnosis, waiting for parts, workshop, road test and delivery.</p></div>
+      <div class="card"><h3>Body and paint shops</h3><p>Estimate, body work, paint booth and polishing.</p></div>
+      <div class="card"><h3>Motorcycle parts stores with a workshop</h3><p>Mechanic evaluation, workbench, track test and pickup.</p></div>
+      <div class="card"><h3>Auto electrical</h3><p>Electrical diagnosis, bench and installation, final test.</p></div>
+      <div class="card"><h3>Automotive air conditioning</h3><p>Leak diagnosis, parts or gas, execution and climate test.</p></div>
+      <div class="card"><h3>Car wash and detailing</h3><p>Reception, waiting line, washing, drying and finishing.</p></div>
+    </div>
+  </div></section>
+
+  <section id="plans" class="band"><div class="wrap">
+    <div style="text-align:center">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="serif">One price, everything included</h2>
+      <p class="sub" style="margin-left:auto;margin-right:auto">Prices in US dollars, paid by card through Stripe. 14-day free trial, no card required.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Monthly</h3>
+        <div class="price">US$ 149<small> /month</small></div>
+        <p class="terms">No lock-in and no penalty. Cancel any time.</p>
+        <ul><li>All features</li><li>WhatsApp Web and official Meta API integration</li><li>Mechanic app</li><li>Fixed price, no extra DT Nexus fees</li></ul>
+        <a class="btn ghost block" href="#contact">Start 14-day trial</a>
+      </div>
+      <div class="plan hl">
+        <span class="badge">BEST VALUE</span>
+        <h3>Annual</h3>
+        <div class="price">US$ 129<small> /month</small></div>
+        <p class="terms">Billed once: US$ 1,548 for 365 days. No automatic renewal.</p>
+        <ul><li>All features</li><li>WhatsApp Web and official Meta API integration</li><li>Mechanic app</li><li>Priority WhatsApp support</li></ul>
+        <a class="btn block" href="#contact">Start 14-day trial</a>
+      </div>
+    </div>
+    <table class="regions">
+      <thead><tr><th>Region</th><th>Monthly</th><th>Annual</th></tr></thead>
+      <tbody>
+        <tr><td>United States and English-speaking countries</td><td>US$ 149</td><td>US$ 1,548</td></tr>
+        <tr><td>Latin America and Spain</td><td>US$ 39</td><td>US$ 396</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Your region is set when you sign up. Meta may charge fees for some WhatsApp API messages on your own business account; DT Nexus does not charge extra for WhatsApp. Based in Brazil? See the <a href="../#planos">prices in reais</a>. Read the <a href="refunds.html">cancellation and refund policy</a>: if you change your mind within 7 days of paying, we refund you.</p>
+  </div></section>
+
+  <section id="faq"><div class="wrap">
+    <div style="text-align:center"><p class="eyebrow">FAQ</p><h2 class="serif" style="margin-bottom:30px">Frequently asked questions</h2></div>
+    <div class="faq">
+      <details><summary>Do I need to install anything?</summary><p>No. The system runs in your browser, on computer and phone. Mechanics also get their own access on their phones.</p></details>
+      <details><summary>Can I try it before paying?</summary><p>Yes. The trial lasts 14 days outside Brazil, with no card required. If you do not subscribe, your account becomes read-only and your data can still be exported.</p></details>
+      <details><summary>What languages does it support?</summary><p>English, Spanish and Portuguese. Each person on your team picks the language they prefer.</p></details>
+      <details><summary>Is there a contract or automatic renewal?</summary><p>No. The monthly plan has no lock-in, and the annual plan is a single payment for 365 days with no automatic renewal.</p></details>
+      <details><summary>Does WhatsApp cost extra?</summary><p>DT Nexus does not charge extra for WhatsApp. With the official Meta API, you use your own Meta business account, and Meta may charge its own fees for some message types. Check Meta's price list before you turn it on.</p></details>
+      <details><summary>Is my shop's data separate from other shops?</summary><p>Yes. Each shop has its own data, isolated from all others.</p></details>
+      <details><summary>What support do I get?</summary><p>Support runs Monday to Friday, 8 am to 6 pm Manaus time (UTC-4). Annual plan: first reply within 2 business hours by WhatsApp. Monthly plan: first reply within 1 business day by e-mail or WhatsApp.</p></details>
+    </div>
+  </div></section>
+
+  <section id="contact" class="band"><div class="wrap">
+    <div class="final">
+      <h2 class="serif">Ready to put your shop on the system?</h2>
+      <p>Message us on WhatsApp or by e-mail and start your 14-day trial.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn" href="https://wa.me/5592985685906?text=Hello!%20I%20would%20like%20to%20try%20DT%20Nexus%20CRM%20for%20my%20shop.">WhatsApp +55 92 98568-5906</a>
+        <a class="btn ghost" href="mailto:dtpel.empreendimento@gmail.com">dtpel.empreendimento@gmail.com</a>
+      </div>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 DT Nexus · Daniel dos Santos Oliveira · CPF 775.000.082-87 · Manaus, Brazil</span>
+  <span><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Cancellation &amp; refunds</a> · <a href="../" hreflang="pt-BR">Português</a></span>
+  <span><a href="mailto:dtpel.empreendimento@gmail.com">dtpel.empreendimento@gmail.com</a> · <a href="https://wa.me/5592985685906">WhatsApp +55 92 98568-5906</a></span>
+</div></footer>
+</body>
+</html>
